@@ -23,23 +23,13 @@ class PlainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_plain)
 
         val binding: ActivityPlainBinding = DataBindingUtil.setContentView(this, R.layout.activity_plain)
 
-        binding.name = "Ada"
-        binding.lastName = "Lovelace"
+        binding.viewmodel = viewModel
 
         // TODO: Explicitly setting initial values is a bad pattern. We'll fix that.
         updateLikes()
-    }
-
-    /**
-     * So much findViewById! We'll fix that with Data Binding.
-     */
-    private fun updateName() {
-        findViewById<TextView>(R.id.plain_name).text = viewModel.name
-        findViewById<TextView>(R.id.plain_lastname).text = viewModel.lastName
     }
 
     /**
